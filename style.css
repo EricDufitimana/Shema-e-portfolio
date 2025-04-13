@@ -1,0 +1,418 @@
+/* setup */
+@import "tailwindcss";
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --dark-grey: #2D2C2C;
+    --black: #131212;
+    --white: #F2F2F2;
+
+}
+body{
+    font-family: "Epilogue", sans-serif;
+    line-height: 1.5;
+    font-size: 16px;
+    background: white;
+    color: var(--dark-grey);
+}
+
+
+/* hero */
+  /* nav*/
+.icon{
+    width: 40px;
+    height: 50px
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    color: var(--dark-grey);
+    gap: 2em;
+    cursor: pointer;
+    position: relative;
+}
+.nav li{
+    position: relative;
+    text-decoration: none;
+}
+
+  
+.nav li:not(:last-child) ::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #333;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+  }
+  
+.nav li:not(:last-child) :hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+.talk-btn{
+    color: white;
+    border: 1px solid var(--dark-grey);
+    background-color: var(--dark-grey);
+    padding: 10px;
+    text-decoration: none;
+    font-weight: 400;
+
+}
+.gradient-text{
+    background: linear-gradient(
+        to right,   #fdf542, #fbd808, #ff9005, #f9530b, #ff0000, 
+        #f9530b, #ff9005, #fbd808, #fdf542
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    background-size: 300% 100%;
+}
+    /* hero */
+
+.left-side-content {
+        position: relative;
+        width: 1000px; 
+    }
+    
+.hero-bg {
+        width: 470px; 
+        height: auto; 
+        margin-top: 110px;
+        transform: rotate(10deg);
+        position: relative;
+        left: 60px;
+        z-index: 1;
+    }
+    
+.hero-shema {
+        width: 470px;
+        height: auto;  
+        position: absolute;
+        top: 100px; 
+        left: 60px; 
+        z-index: 2;
+        transform: rotate(-10deg)
+    }
+    
+.hero-content {
+        display: flex;
+        position: relative;
+        gap: 0; 
+        align-items: flex-start;
+        padding-bottom: 200px;
+    }
+    
+.right-side-hero {
+        position: relative;
+        z-index: 3; 
+    }
+.big-heading {
+        padding-top: 150px;
+        font-size: 150px;
+        line-height: 1.1;
+        font-weight: 650;
+        position: relative;
+        margin-right: -150px; 
+    }
+    
+.description {
+        padding-top: 10px;
+        margin-left: 15px;
+        position: relative;
+        z-index: 3;
+    }
+
+
+/* about me */ 
+.about-me{
+    background-color:var(--black);
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+.cont.about-me-content{
+    padding: 100px;
+}
+.about-me-content{
+    display: flex;
+    flex-direction: row;
+    gap: 5em;
+
+}
+.l-s-about-me-photo{
+    width: 350px;
+    height: 350px;
+    margin-left: -20px;
+}
+.r-s-about-me-photo{
+    width: 500px;
+    height: 500px;
+    margin-left: -32px;
+}
+.r-s-about-me{
+    display: flex;
+    flex-direction: column;
+    h1{
+        font-weight: 700;
+    }
+}
+.about-me-paragraph{
+    max-width: 330px;
+    padding-bottom: 400px;
+}
+.about-me-h3{
+    font-weight: 254;
+    font-size: 40px;
+    max-width: 400px;
+    padding-bottom: 300px;
+}
+
+
+/* My Projects */
+.my-projects {
+    position: relative; /* Required for absolute child positioning */
+    z-index: 1;
+    padding: 2rem;
+    overflow: hidden; /* Optional: hides parts of the image if it goes out of bounds */
+}
+.my-projects-content{
+    z-index: 40;
+}
+.line {
+    position: absolute;
+    
+    top: 2000px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 0;
+    pointer-events: none; /* So it doesn’t interfere with clicks */
+  }
+  
+.title{
+    font-size: 60px;
+    color: var(--dark-grey);
+    line-height: 1.0;
+    padding:50px 0px;
+    font-weight: 650;
+}
+
+.p-cont{
+    gap: 3em;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #131212;
+    color: var(--white);
+    padding: 30px;
+    height: 320px;
+
+}
+.p-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+.l-p{
+    max-width: 400px;
+}
+.my-project-cards{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+.r-p{
+    h2{
+        font-size: 30px;
+        line-height: 1.0;
+    }
+    p{
+        padding-top: 10px;
+        font-size: 15px;
+    }
+}
+.view-paragraph{
+    padding-top: 15px;
+    font-size: 14px;
+}
+
+.first-p{
+    background-image: url('https://liveeventproductions.co.uk/wp-content/uploads/2018/01/event-production-services-live-event-productions-banner-image-4.jpg');
+    background-size: cover;
+}
+.third-p{
+    background-image: url('https://images7.alphacoders.com/110/1103153.jpg');
+    background-size: cover;
+}
+.second-p{
+    background-image: url('https://static.euronews.com/articles/stories/07/32/03/64/808x454_cmsv2_c552722c-c34a-534a-b762-87be2d732a8f-7320364.jpg');
+    background-size: cover;
+}
+
+
+
+/* gallery */
+.gallery-title{
+    font-size: 60px;
+    z-index: 1;
+}
+.gallery-pics{
+    z-index: 1;
+}
+.gallery-heading{
+
+    padding-top: 100px;
+    display: flex;
+    gap: 0.5em;
+    flex-direction: row;
+}
+.gallery-subtitle{
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 300;
+}
+.column1{
+    display: flex;
+    flex-direction: row ;
+}
+.lets-talk{
+    padding-top: 5em;
+    display: flex;
+    justify-content: center;
+}
+.gallery-btn{
+    padding: 20px 20px;
+    font-size: larger;
+    cursor: pointer;
+}
+.gallery{
+    z-index: 1;
+}
+ 
+
+
+
+/* Footer */
+
+
+.footer-content{
+    padding-top: 5em;
+    display: flex;
+    flex-direction: column;
+}
+.footer-top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+}
+.footer-list{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+}
+.footer-contact-title{
+    font-size: 18px;
+}
+.footer-input{
+    padding: 8px 21px;
+    border: 1.3px solid var(--black);
+}
+.footer-input::placeholder{
+    font-size: 15px;
+    font-family: "Epilogue", sans-serif;
+    margin-right: 10px;
+}
+.footer-left{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.send-btn{
+    margin-left: 15px;
+    border: 1.3px solid var(--black);
+    text-decoration: none;
+    color: var(--black);
+    padding: 7px 14px;
+    font-size: 12px;
+
+}
+.footer-input-respond{
+    font-size: 12px;
+    a{
+        color: var(--black);
+    }
+}
+.send-message{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+.bottom-footer{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.copyright{
+    font-size: 18px;
+    font-weight: 400;
+    color:#131212;
+}
+.fa-brands{
+    color: var(--black);
+    cursor: pointer;
+}
+.icons{
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    a{
+        text-decoration: none;
+    }
+    i{
+        font-size:18px;
+    }
+}
+
+
+/* utility classes */
+.cont{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+
+}
+.contsm{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
