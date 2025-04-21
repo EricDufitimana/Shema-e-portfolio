@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="contact.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "qrgidiCXZBvmIHI3A",
+        });
+    })();
+    </script>
+    <script src="script.js"></script>
+    <title> Contact Me</title>
+
+</head>
+<body>
+    <section class="hero cont p-2">
+        <nav class="pt-6">
+            <div class="icon-hero">
+                <i class="fa-solid fa-camera-retro text-3xl"></i>
+            </div>
+            <div class="menu">
+                <ul class="nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </section>
+    <section class="contact pt-12 p-6 flex items-start gap-6 justify-center cont">
+        <div class="image">
+            <img src="image.png" alt="Image of Shema" class="portrait h-full">
+        </div>
+        <div class="border-l-2 border-gray-600 mx-4 self-stretch"></div>
+
+        <div class="contact-input">
+            <h3 class="contact-title">SEND ME A MESSAGE</h3>
+            <p class="contact-paragraph">Have questions, want to chat, or interested in hiring me? Send a message below and I'll respond promptly.</p>
+            <form action="" class="contact-form flex flex-col gap-10">
+                <div class="group">
+                    <input required type="text" class="input" id="first_name">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>First Name</label>
+                </div>
+                <div class="group">
+                    <input required="" type="text" class="input" id="last_name">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Last Name</label>
+                </div>
+                <div class="group">
+                    <input required="" type="email" class="input" id="email">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Email</label>
+                </div>
+                <div class="group pb-6">
+                    <input required="" type="text" class="input" id="message">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Message</label>
+                </div>
+                <button class="p-4" type="button" onclick="sendEmail()"> SEND
+                  </button>
+            </form>
+        </div>
+    </section>
+</body>

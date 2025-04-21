@@ -1,0 +1,213 @@
+
+@import "tailwindcss";
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --dark-grey: #2D2C2C;
+    --black: #131212;
+    --white: #F2F2F2;
+
+}
+body{
+    font-family: "Epilogue", sans-serif;
+    line-height: 1.5;
+    font-size: 16px;
+    background: white;
+    color: var(--dark-grey);
+}
+
+
+/* hero */
+  /* nav*/
+.icon{
+    width: 40px;
+    height: 50px
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    color: var(--dark-grey);
+    gap: 2em;
+    cursor: pointer;
+    position: relative;
+}
+.nav li{
+    position: relative;
+    text-decoration: none;
+}
+
+  
+.nav li:not(:last-child) ::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #333;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+  }
+  
+.nav li:not(:last-child) :hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+.talk-btn{
+    color: white;
+    border: 1px solid var(--dark-grey);
+    background-color: var(--dark-grey);
+    padding: 10px;
+    text-decoration: none;
+    font-weight: 400;
+
+}
+
+
+/* Contact */
+.contact-input{
+    width: 40%;
+}
+.contact-title{
+    font-weight: 254;
+    font-size: 40px;
+}
+.contact-paragraph{
+    padding-bottom: 40px;
+}
+
+.line{
+    height: 2px;
+    transform: rotate(90deg);
+}
+.potrait{
+    width: 520px;
+}
+.group {
+    position: relative;
+   }
+   
+.input {
+    font-size: 16px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #515151;
+    background: transparent;
+   }
+   
+.input:focus {
+    outline: none;
+    border-bottom: none
+   }
+   
+label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+   }
+   
+.input:focus ~ label, .input:valid ~ label {
+    top: -20px;
+    font-size: 14px;
+    color: orange;
+}
+   
+.bar {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+   
+.bar:before, .bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: orange;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+   
+.bar:before {
+    left: 50%;
+}
+   
+.bar:after {
+    right: 50%;
+}
+   
+.input:focus ~ .bar:before, .input:focus ~ .bar:after {
+    width: 50%;
+}
+   
+.highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+   
+.input:focus ~ .highlight {
+    animation: inputHighlighter 0.3s ease;
+}
+   
+@keyframes inputHighlighter {
+    from {
+     background: orange;
+    }
+   
+    to {
+     width: 0;
+     background: transparent;
+    }
+   }
+
+
+button {
+    border: 1px solid black;
+    font-size: 18px;
+}
+button:hover{
+    transform: translateY(-5px);
+}
+
+
+/* Utility classes */
+.cont{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+
+}
+.contsm{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 15px;
+}

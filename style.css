@@ -162,8 +162,8 @@ nav{
 
 }
 .l-s-about-me-photo{
-    width: 350px;
-    height: 350px;
+    width: 360px;
+    height: 360px;
     margin-left: -20px;
 }
 .r-s-about-me-photo{
@@ -179,7 +179,7 @@ nav{
     }
 }
 .about-me-paragraph{
-    max-width: 330px;
+    max-width: 360px;
     padding-bottom: 400px;
 }
 .about-me-h3{
