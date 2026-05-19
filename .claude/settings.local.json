@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node_modules/.bin/tsc --noEmit)",
+      "Bash(pnpm run *)",
+      "Bash(ls -la /mnt/c/Users/ASYV/Downloads/)",
+      "Read(//mnt/c/Users/ASYV/**)",
+      "PowerShell($desk = [Environment]::GetFolderPath\\('Desktop'\\); Write-Host $desk; Get-ChildItem $desk -Force -ErrorAction SilentlyContinue | Select-Object Name, LastWriteTime | Sort-Object LastWriteTime -Descending)",
+      "Bash(sed 's/.*href=\"//')",
+      "Bash(sed 's/\".*//')"
+    ]
+  }
+}

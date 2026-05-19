@@ -1,0 +1,12 @@
+/* Primary load via <link> in index.html — these @imports are kept as fallback */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* Framer exports reference fonts as "DM Sans:Regular", "DM Sans:Medium", etc.
+   These @font-face rules alias those names to the already-loaded "DM Sans" family. */
+@font-face { font-family: 'DM Sans:Regular';   font-weight: 400; font-style: normal;  src: local('DM Sans Regular'), local('DM Sans'); font-display: swap; }
+@font-face { font-family: 'DM Sans:Medium';    font-weight: 500; font-style: normal;  src: local('DM Sans Medium'),  local('DM Sans'); font-display: swap; }
+@font-face { font-family: 'DM Sans:Bold';      font-weight: 700; font-style: normal;  src: local('DM Sans Bold'),    local('DM Sans'); font-display: swap; }
+@font-face { font-family: 'DM Sans:Black';     font-weight: 900; font-style: normal;  src: local('DM Sans Black'),   local('DM Sans'); font-display: swap; }
+@font-face { font-family: 'Libre Baskerville:Regular'; font-weight: 400; font-style: normal;  src: local('Libre Baskerville'), local('LibreBaskerville-Regular'); font-display: swap; }
+@font-face { font-family: 'Libre Baskerville:Italic';  font-weight: 400; font-style: italic;  src: local('Libre Baskerville Italic'), local('LibreBaskerville-Italic'); font-display: swap; }
