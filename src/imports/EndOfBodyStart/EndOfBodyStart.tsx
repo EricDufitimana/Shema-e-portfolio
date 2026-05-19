@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef } from "react";
+﻿import { useEffect, useRef, useState } from "react";
 import { initAnimations } from "../../app/animations";
 import svgPaths from "./svg-whnsvko88k";
 import { getImg } from "../../lib/imageStore";
@@ -11,10 +11,6 @@ import imgNh8EQlfaxl91U2NhBaq8Rc4NodqMp4 from "./46d80e6103bacdeec4f15e52cab1eb3
 import imgGrandOpeningRoughRecords63258Pm from "./ba4b81c93addd4e1a2f3fe6ece2270287bbdbddd.png";
 import img2DpNdbCobj1SacO4OMpr1IvlGeMp4 from "./0a993fc5212d90eb4b5b6626c88cb8286d755e2b.png";
 import imgPortofolioImage from "./5711b33dc5b294d3038b85cc661e63c058ca3516.png";
-import imgSmartphoneDisplayingDataAnalyticsColorfulIllustrationBackground from "./987354c00d774589eccedbfe6ac93e892f46b904.png";
-import imgLaptopDisplayingDataGraphsAndChartsBusinessAnalyticsConcept from "./de53b6829e7db7c197134355e608d8f9d6592dc2.png";
-import imgHandHoldingPhoneWithSavingGoalAppInterfaceFinancialPlanningConcept from "./a1d5b8a13d719e1b847ae6036e73469dcbadbfa2.png";
-import imgAbstractGreenOvalShapesWithABlackLineOnBeigeBackground from "./ef2567f337b9ea68542f9d689dd27ab69157a083.png";
 import imgPeS3XlMbi5NrAInAViMhLpv75EJpg from "./73a62025e742cf2b7138ab571b38211090cf164c.png";
 import imgGTwC3PibWEsTjab4HIEkLaVFfQJpg from "./af6b8785f50c38e535d79dae1cb728fafac7849f.png";
 import imgShIa3UWu2Ud2OI3Xk2CjDiAhAcPng from "./d641e9d8c2502b178d9214e4b9ec3eae7cd4baf0.png";
@@ -44,7 +40,7 @@ function Works() {
 
 function LinkVariant() {
   return (
-    <a className="content-stretch cursor-pointer flex h-[80px] items-center justify-center pb-[29.59px] pt-[28.61px] px-[40px] relative shrink-0" href="https://artemis1.framer.website/works" target="_blank" data-name="Link - Variant 1">
+    <a className="content-stretch cursor-pointer flex h-[80px] items-center justify-center pb-[29.59px] pt-[28.61px] px-[40px] relative shrink-0" href="/work" data-name="Link - Variant 1">
       <Works />
     </a>
   );
@@ -92,7 +88,7 @@ function Name() {
 
 function LinkVariant1() {
   return (
-    <a className="cursor-pointer h-[80px] relative shrink-0 w-full" href="https://artemis1.framer.website/" target="_blank" data-name="Link - Variant 1">
+    <a className="cursor-pointer h-[80px] relative shrink-0 w-full" href="/" data-name="Link - Variant 1">
       <div className="flex flex-col items-center justify-center size-full">
         <div className="content-stretch flex flex-col items-center justify-center pb-[13.6px] pt-[12.59px] px-[24px] relative size-full">
           <Name />
@@ -130,7 +126,7 @@ function Works1() {
 
 function LinkVariant2() {
   return (
-    <a className="cursor-pointer h-[80px] relative shrink-0 w-full" href="https://artemis1.framer.website/playground" target="_blank" data-name="Link - Variant 1">
+    <a className="cursor-pointer h-[80px] relative shrink-0 w-full" href="/#contact" data-name="Link - Variant 1">
       <div className="flex flex-row items-center justify-center size-full">
         <div className="content-stretch flex items-center justify-center pb-[29.59px] pt-[28.61px] px-[40px] relative size-full">
           <Works1 />
@@ -392,16 +388,6 @@ function SectionHero() {
           <Container13 />
         </div>
       </div>
-      <div className="absolute bottom-[314.18px] flex h-[130.405px] items-center justify-center left-[716.35px] w-[161.565px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "22" } as React.CSSProperties}>
-        <div className="flex-none rotate-12">
-          <Container14 />
-        </div>
-      </div>
-      <div className="absolute flex h-[272.121px] items-center justify-center right-[-49.85px] top-[1295.03px] w-[253.511px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "22" } as React.CSSProperties}>
-        <div className="flex-none rotate-32">
-          <Container15 />
-        </div>
-      </div>
     </div>
   );
 }
@@ -432,302 +418,50 @@ function SectionTitle() {
   );
 }
 
-function Image() {
-  return <div className="h-[362.59px] relative rounded-[8px] shrink-0 w-[259px]" data-name="Image" />;
-}
+const CAROUSEL_IMAGES = [
+  { key: "gallery1" as const, fallback: imgVariant1SOv9OVng8G6ETcJz9McCnJarYgeJpg, h: 362, w: 259 },
+  { key: "gallery2" as const, fallback: imgGrandOpeningRoughRecords63258Pm, h: 300, w: 225 },
+  { key: "gallery3" as const, fallback: img2DpNdbCobj1SacO4OMpr1IvlGeMp4, h: 215, w: 393 },
+  { key: "gallery4" as const, fallback: imgPortofolioImage, h: 290, w: 232 },
+  { key: "gallery5" as const, fallback: imgVariant1V9By2Y3T7Fgrb9STyb57W099LkJpg, h: 315, w: 339 },
+];
 
-function Image1() {
-  return <div className="h-[300px] relative rounded-[8px] shrink-0 w-[225px]" data-name="Image" />;
-}
-
-function Container18() {
-  return <div className="h-[215px] relative shrink-0 w-[393px]" data-name="Container" />;
-}
-
-function Image2() {
-  return <div className="h-[290px] relative rounded-[8px] shrink-0 w-[232px]" data-name="Image" />;
-}
-
-function Image3() {
-  return <div className="h-[315.45px] relative rounded-[8px] shrink-0 w-[339px]" data-name="Image" />;
-}
-
-function Image4() {
-  return <div className="h-[191.14px] relative rounded-[8px] shrink-0 w-[232px]" data-name="Image" />;
-}
-
-function Image5() {
-  return <div className="h-[333.33px] relative rounded-[8px] shrink-0 w-[250px]" data-name="Image" />;
-}
-
-function Image6() {
-  return <div className="h-[328.16px] relative rounded-[8px] shrink-0 w-[266px]" data-name="Image" />;
-}
-
-function Image7() {
-  return <div className="h-[271.25px] relative rounded-[8px] shrink-0 w-[217px]" data-name="Image" />;
-}
-
-function Image8() {
-  return <div className="h-[373.75px] relative rounded-[8px] shrink-0 w-[299px]" data-name="Image" />;
-}
-
-function Container19() {
-  return <div className="h-[354px] relative shrink-0 w-[290px]" data-name="Container" />;
-}
-
-function Image9() {
-  return <div className="relative rounded-[8px] shrink-0 size-[289px]" data-name="Image" />;
-}
-
-function A4CtABxvbRaq6Aq99HPazcljFaMp() {
+function CarouselStrip() {
   return (
-    <div className="flex-[1_0_0] min-h-px relative rounded-[8px] w-full" data-name="A4ctABxvbRaq6aq99HPazcljFA.mp4">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[8px]">
-        <img alt="" className="absolute h-full left-[-1.83%] max-w-none top-0 w-[103.66%]" src={getImg("video1") || imgA4CtABxvbRaq6Aq99HPazcljFaMp4} />
-      </div>
-    </div>
-  );
-}
-
-function Container20() {
-  return (
-    <div className="content-stretch flex flex-col h-[369px] items-start justify-center relative shrink-0 w-[285px]" data-name="Container">
-      <A4CtABxvbRaq6Aq99HPazcljFaMp />
-    </div>
-  );
-}
-
-function Nh8EQlfaxl91U2NhBaq8Rc4NodqMp() {
-  return (
-    <div className="flex-[1_0_0] min-h-px relative rounded-[8px] w-full" data-name="NH8EQlfaxl91U2nhBaq8RC4NODQ.mp4">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[8px]">
-        <img alt="" className="absolute h-full left-[-0.1%] max-w-none top-0 w-[100.2%]" src={getImg("video2") || imgNh8EQlfaxl91U2NhBaq8Rc4NodqMp4} />
-      </div>
-    </div>
-  );
-}
-
-function Container21() {
-  return (
-    <div className="content-stretch flex flex-col h-[284px] items-start justify-center relative shrink-0 w-[399px]" data-name="Container">
-      <Nh8EQlfaxl91U2NhBaq8Rc4NodqMp />
-    </div>
-  );
-}
-
-function Variant() {
-  return (
-    <div className="content-stretch flex flex-[1_0_0] gap-[24px] items-end justify-center min-h-px overflow-clip relative w-full" data-name="Variant 1">
-      <Image />
-      <Image1 />
-      <Container18 />
-      <Image2 />
-      <Image3 />
-      <Image4 />
-      <Image5 />
-      <Image6 />
-      <Image7 />
-      <Image8 />
-      <Container19 />
-      <Image9 />
-      <Container20 />
-      <Container21 />
-    </div>
-  );
-}
-
-function Container17() {
-  return (
-    <div className="content-stretch flex flex-col h-[374px] items-start justify-center relative shrink-0 w-[4287px]" data-name="Container">
-      <Variant />
-    </div>
-  );
-}
-
-function Item() {
-  return (
-    <div className="content-stretch flex flex-col h-[374px] items-start relative shrink-0 w-[4287px]" data-name="Item">
-      <Container17 />
-    </div>
-  );
-}
-
-function CassieHenryWeddingSaveTheDate() {
-  return (
-    <div className="h-[362.59px] relative rounded-[8px] shrink-0 w-full" data-name="Cassie & Henry wedding save the date">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[8px]">
-        <img alt="" className="absolute h-[100.06%] left-0 max-w-none top-[-0.03%] w-full" src={getImg("gallery1") || imgVariant1SOv9OVng8G6ETcJz9McCnJarYgeJpg} />
-      </div>
-    </div>
-  );
-}
-
-function Image10() {
-  return (
-    <div className="aspect-[259/362.5899963378906] content-stretch flex flex-col items-start justify-center relative rounded-[8px] shrink-0" data-name="Image">
-      <CassieHenryWeddingSaveTheDate />
-    </div>
-  );
-}
-
-function GrandOpeningRoughRecords63258Pm() {
-  return (
-    <div className="h-[300px] relative rounded-[8px] shrink-0 w-full" data-name="Grand Opening Rough Records: 6/3/25, 8PM">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[8px]">
-        <img alt="" className="absolute left-0 max-w-none size-full top-0" src={getImg("gallery2") || imgGrandOpeningRoughRecords63258Pm} />
-      </div>
-    </div>
-  );
-}
-
-function Image11() {
-  return (
-    <div className="aspect-[225/300] content-stretch flex flex-col items-start justify-center relative rounded-[8px] shrink-0" data-name="Image">
-      <GrandOpeningRoughRecords63258Pm />
-    </div>
-  );
-}
-
-function Component2DpNdbCobj1SacO4OMpr1IvlGeMp() {
-  return (
-    <div className="flex-[1_0_0] min-h-px relative rounded-[8px] w-full" data-name="2DpNdbCobj1SacO4OMpr1IvlGE.mp4">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[8px]">
-        <img alt="" className="absolute h-[100.1%] left-0 max-w-none top-[-0.05%] w-full" src={getImg("gallery3") || img2DpNdbCobj1SacO4OMpr1IvlGeMp4} />
-      </div>
-    </div>
-  );
-}
-
-function Container23() {
-  return (
-    <div className="content-stretch flex flex-col h-[215px] items-start justify-center relative shrink-0 w-[393px]" data-name="Container">
-      <Component2DpNdbCobj1SacO4OMpr1IvlGeMp />
-    </div>
-  );
-}
-
-function PortofolioImage() {
-  return (
-    <div className="h-[290px] relative rounded-[8px] shrink-0 w-full" data-name="Portofolio image">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[8px]">
-        <img alt="" className="absolute h-[100.02%] left-0 max-w-none top-[-0.01%] w-full" src={getImg("gallery4") || imgPortofolioImage} />
-      </div>
-    </div>
-  );
-}
-
-function Image12() {
-  return (
-    <div className="aspect-[232/290] content-stretch flex flex-col items-start justify-center relative rounded-[8px] shrink-0" data-name="Image">
-      <PortofolioImage />
-    </div>
-  );
-}
-
-function TwoFiguresOnHorsebackUnderATreeAgainstRedBackground() {
-  return (
-    <div className="h-[315.45px] relative rounded-[8px] shrink-0 w-full" data-name="Two figures on horseback under a tree against red background.">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[8px]">
-        <img alt="" className="absolute h-full left-[-0.05%] max-w-none top-0 w-[100.09%]" src={getImg("gallery5") || imgVariant1V9By2Y3T7Fgrb9STyb57W099LkJpg} />
-      </div>
-    </div>
-  );
-}
-
-function Image13() {
-  return (
-    <div className="aspect-[339/315.45001220703125] content-stretch flex flex-col items-start justify-center relative rounded-[8px] shrink-0" data-name="Image">
-      <TwoFiguresOnHorsebackUnderATreeAgainstRedBackground />
-    </div>
-  );
-}
-
-function Image14() {
-  return <div className="h-[191.14px] relative rounded-[8px] shrink-0 w-[232px]" data-name="Image" />;
-}
-
-function Image15() {
-  return <div className="h-[333.33px] relative rounded-[8px] shrink-0 w-[250px]" data-name="Image" />;
-}
-
-function Image16() {
-  return <div className="h-[328.16px] relative rounded-[8px] shrink-0 w-[266px]" data-name="Image" />;
-}
-
-function Image17() {
-  return <div className="h-[271.25px] relative rounded-[8px] shrink-0 w-[217px]" data-name="Image" />;
-}
-
-function Image18() {
-  return <div className="h-[373.75px] relative rounded-[8px] shrink-0 w-[299px]" data-name="Image" />;
-}
-
-function Container24() {
-  return <div className="h-[354px] relative shrink-0 w-[290px]" data-name="Container" />;
-}
-
-function Image19() {
-  return <div className="relative rounded-[8px] shrink-0 size-[289px]" data-name="Image" />;
-}
-
-function Container25() {
-  return <div className="h-[369px] relative shrink-0 w-[285px]" data-name="Container" />;
-}
-
-function Container26() {
-  return <div className="h-[284px] relative shrink-0 w-[399px]" data-name="Container" />;
-}
-
-function Variant1() {
-  return (
-    <div className="content-stretch flex flex-[1_0_0] gap-[24px] items-end justify-center min-h-px overflow-clip relative w-full" data-name="Variant 1">
-      <Image10 />
-      <Image11 />
-      <Container23 />
-      <Image12 />
-      <Image13 />
-      <Image14 />
-      <Image15 />
-      <Image16 />
-      <Image17 />
-      <Image18 />
-      <Container24 />
-      <Image19 />
-      <Container25 />
-      <Container26 />
-    </div>
-  );
-}
-
-function Container22() {
-  return (
-    <div className="content-stretch flex flex-col h-[374px] items-start justify-center relative shrink-0 w-[4287px]" data-name="Container">
-      <Variant1 />
-    </div>
-  );
-}
-
-function Item1() {
-  return (
-    <div className="content-stretch flex flex-col h-[374px] items-start relative shrink-0 w-[4287px]" data-name="Item">
-      <Container22 />
+    <div className="flex gap-6 items-end shrink-0">
+      {CAROUSEL_IMAGES.map((slot, i) => (
+        <div
+          key={i}
+          className="relative rounded-[8px] shrink-0 overflow-hidden"
+          style={{ height: `${slot.h}px`, width: `${slot.w}px` }}
+        >
+          <img
+            alt=""
+            src={getImg(slot.key) || slot.fallback}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </div>
+      ))}
     </div>
   );
 }
 
 function SectionList() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] gap-[24px] items-end min-h-px relative w-[8598px]" data-name="Section → List" style={{ animation: "gallery-scroll 40s linear infinite" }}>
-      <Item />
-      <Item1 />
+    <div
+      className="flex gap-6 items-end"
+      style={{ animation: "gallery-scroll 30s linear infinite", width: "max-content" }}
+    >
+      <CarouselStrip />
+      <CarouselStrip />
+      <CarouselStrip />
     </div>
   );
 }
 
 function Container16() {
   return (
-    <div className="-translate-x-1/2 absolute content-stretch flex flex-col h-[366px] items-start justify-center left-[calc(50%-2033.01px)] top-[179.2px] w-[5114.01px]" data-name="Container">
+    <div className="absolute bottom-0 left-0 right-0 top-[179px] overflow-hidden">
       <SectionList />
     </div>
   );
@@ -738,794 +472,6 @@ function SectionSneakPeak() {
     <div className="-translate-x-1/2 absolute h-[545.2px] left-1/2 overflow-hidden top-[805px] w-[1768px]" data-name="Section - Sneak peak">
       <SectionTitle />
       <Container16 />
-    </div>
-  );
-}
-
-function Heading2() {
-  return (
-    <div className="content-stretch flex flex-col items-center pb-[0.8px] relative shrink-0 w-full" data-name="Heading 2">
-      <div className="[word-break:break-word] flex flex-col font-['Libre_Baskerville:Italic',sans-serif] font-normal italic justify-center leading-[0] relative shrink-0 text-[#001666] text-[64px] text-center tracking-[-2px] whitespace-nowrap">
-        <p className="leading-[76.8px]">This is Shema</p>
-      </div>
-    </div>
-  );
-}
-
-function Title2() {
-  return (
-    <div className="-translate-y-1/2 absolute content-stretch flex flex-col items-start left-[524px] max-w-[720px] right-[524px] top-[calc(50%-21.5px)]" data-name="Title">
-      <Heading2 />
-    </div>
-  );
-}
-
-function Container27() {
-  return (
-    <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="Container">
-      <div className="[word-break:break-word] flex flex-col font-['DM_Sans:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[#5f6566] text-[20px] text-center tracking-[-0.2px] whitespace-nowrap" style={{ fontVariationSettings: "'opsz' 14" }}>
-        <p className="leading-[26px]">Capturing real stories through light, motion, and honest moments.</p>
-      </div>
-    </div>
-  );
-}
-
-function Description() {
-  return (
-    <div className="-translate-y-1/2 absolute content-stretch flex flex-col items-start left-[524px] max-w-[720px] right-[524px] top-[calc(50%+46.4px)]" data-name="Description">
-      <Container27 />
-    </div>
-  );
-}
-
-function SectionTitle1() {
-  return (
-    <div className="h-[118.8px] overflow-clip relative shrink-0 w-full" data-name="Section Title">
-      <Title2 />
-      <Description />
-    </div>
-  );
-}
-
-function Container31() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container">
-      <div className="[word-break:break-word] flex flex-col font-['DM_Sans:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[#f8f6f3] text-[16px] whitespace-nowrap" style={{ fontVariationSettings: "'opsz' 14" }}>
-        <p className="leading-[24px]">Load More</p>
-      </div>
-    </div>
-  );
-}
-
-function Container30() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-[80px]" data-name="Container">
-      <Container31 />
-    </div>
-  );
-}
-
-function ButtonDefault() {
-  return (
-    <div className="bg-[#ff5900] content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[99px] shrink-0" data-name="Button - Default">
-      <Container30 />
-    </div>
-  );
-}
-
-function Container29() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="Container">
-      <ButtonDefault />
-    </div>
-  );
-}
-
-function LoadMore() {
-  return (
-    <div className="absolute content-stretch flex h-[48px] items-center justify-center left-0 overflow-clip px-[480px] right-0 top-[1377.97px]" data-name="Load More">
-      <Container29 />
-    </div>
-  );
-}
-
-function SmartphoneDisplayingDataAnalyticsColorfulIllustrationBackground() {
-  return (
-    <div className="flex-[1_0_0] min-h-px relative w-full" data-name="Smartphone displaying data analytics, colorful illustration background">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <img alt="" className="absolute h-full left-[-1.41%] max-w-none top-0 w-[102.82%]" src={getImg("project1") || imgSmartphoneDisplayingDataAnalyticsColorfulIllustrationBackground} />
-      </div>
-    </div>
-  );
-}
-
-function Cover() {
-  return (
-    <div className="content-stretch flex flex-col h-[283px] items-start justify-center relative shrink-0 w-[491px]" data-name="Cover">
-      <SmartphoneDisplayingDataAnalyticsColorfulIllustrationBackground />
-    </div>
-  );
-}
-
-function CoverMask() {
-  return (
-    <div className="content-stretch flex flex-col items-center justify-center overflow-clip relative rounded-[8px] shrink-0 w-full" data-name="Cover mask">
-      <Cover />
-    </div>
-  );
-}
-
-function Heading5() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 5">
-      <div className="[word-break:break-word] flex flex-col font-['DM_Sans:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[#2a3132] text-[36px] text-left tracking-[-0.72px] w-full" style={{ fontVariationSettings: "'opsz' 14" }}>
-        <p className="leading-[46.8px]">ASYV Stories</p>
-      </div>
-    </div>
-  );
-}
-
-function ProjectTitle() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Project title">
-      <Heading5 />
-    </div>
-  );
-}
-
-function Container33() {
-  return (
-    <div className="absolute content-stretch flex flex-col items-start left-0 right-0 top-[-1.3px]" data-name="Container">
-      <div className="[word-break:break-word] flex flex-col font-['DM_Sans:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[#5f6566] text-[16px] text-left tracking-[-0.1px] whitespace-nowrap" style={{ fontVariationSettings: "'opsz' 14" }}>
-        <p className="leading-[20.8px] mb-0">A documentary photo series capturing the heartbeat of</p>
-        <p className="leading-[20.8px] mb-0">Agahozo-Shalom Youth Village — students, mentors, late</p>
-        <p className="leading-[20.8px] mb-0">nights studying, and quiet moments of resilience. Shot</p>
-        <p className="leading-[20.8px]">entirely on campus over several months.</p>
-      </div>
-    </div>
-  );
-}
-
-function ProjectSummary() {
-  return (
-    <div className="h-[83.19px] overflow-clip relative shrink-0 w-full" data-name="Project summary">
-      <Container33 />
-    </div>
-  );
-}
-
-function ProjectInfo() {
-  return (
-    <div className="content-stretch flex flex-col gap-[16px] items-center justify-center relative shrink-0 w-full" data-name="Project Info">
-      <ProjectTitle />
-      <ProjectSummary />
-    </div>
-  );
-}
-
-function Mark() {
-  return (
-    <div className="bg-[#2a3132] content-stretch flex items-start pb-[4.5px] pt-[3.5px] px-[14px] relative rounded-[20px] shrink-0" data-name="Mark">
-      <div className="[word-break:break-word] flex flex-col font-['DM_Sans:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[#f8f6f3] text-[16px] text-left whitespace-nowrap" style={{ fontVariationSettings: "'opsz' 14" }}>
-        <p className="leading-[24px]">Documentary Photography</p>
-      </div>
-    </div>
-  );
-}
-
-function Container34() {
-  return (
-    <div className="absolute content-stretch flex flex-col items-start left-0 right-0 top-[-4px]" data-name="Container">
-      <Mark />
-    </div>
-  );
-}
-
-function Category() {
-  return (
-    <div className="h-[24px] relative shrink-0 w-[143.25px]" data-name="Category">
-      <Container34 />
-    </div>
-  );
-}
-
-function MaskGroup() {
-  return (
-    <div className="relative shrink-0 size-[24px]" data-name="Mask Group">
-      <div className="-translate-x-1/2 -translate-y-1/2 absolute bg-[#f8f6f3] left-1/2 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-[24px_24px] size-[24px] top-1/2" style={{ maskImage: `url('${imgBackground}')` }} data-name="Background" />
-    </div>
-  );
-}
-
-function Icon1() {
-  return (
-    <div className="bg-[#2a3132] content-stretch flex items-center justify-center opacity-0 relative rounded-[99px] shrink-0 size-[40px]" data-name="Icon">
-      <MaskGroup />
-    </div>
-  );
-}
-
-function Icon() {
-  return (
-    <div className="content-stretch flex h-[40px] items-center justify-center pr-[5px] relative shrink-0 w-[45px]" data-name="Icon">
-      <Icon1 />
-    </div>
-  );
-}
-
-function CategoryIcon() {
-  return (
-    <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-name="Category & Icon">
-      <Category />
-      <Icon />
-    </div>
-  );
-}
-
-function ContentWrapper() {
-  return (
-    <div className="content-stretch flex flex-col gap-[40px] items-start relative shrink-0 w-full" data-name="Content → Wrapper">
-      <ProjectInfo />
-      <CategoryIcon />
-    </div>
-  );
-}
-
-function Desktop() {
-  return (
-    <div className="bg-white content-stretch flex flex-col gap-[40px] items-start overflow-clip p-[20px] relative rounded-[16px] shrink-0 w-[504px]" data-name="Desktop">
-      <CoverMask />
-      <ContentWrapper />
-      <div className="absolute inset-0 rounded-[16px]" data-name="Border">
-        <div aria-hidden="true" className="absolute border border-black/[0.08] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      </div>
-    </div>
-  );
-}
-
-function Container32() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="Container">
-      <Desktop />
-    </div>
-  );
-}
-
-function Link() {
-  return (
-    <a className="-translate-x-1/2 absolute content-stretch cursor-pointer flex flex-col items-center justify-end left-[calc(50%-264px)] top-0" href={getImg("project1Link") || "https://artemis1.framer.website/works/finflow"} target="_blank" data-name="Link">
-      <Container32 />
-    </a>
-  );
-}
-
-function LaptopDisplayingDataGraphsAndChartsBusinessAnalyticsConcept() {
-  return (
-    <div className="flex-[1_0_0] min-h-px relative w-full" data-name="Laptop displaying data graphs and charts. Business analytics concept.">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <img alt="" className="absolute h-[130.12%] left-0 max-w-none top-[-15.06%] w-full" src={getImg("project2") || imgLaptopDisplayingDataGraphsAndChartsBusinessAnalyticsConcept} />
-      </div>
-    </div>
-  );
-}
-
-function Cover1() {
-  return (
-    <div className="content-stretch flex flex-col h-[283px] items-start justify-center relative shrink-0 w-[491px]" data-name="Cover">
-      <LaptopDisplayingDataGraphsAndChartsBusinessAnalyticsConcept />
-    </div>
-  );
-}
-
-function CoverMask1() {
-  return (
-    <div className="content-stretch flex flex-col items-center justify-center overflow-clip relative rounded-[8px] shrink-0 w-full" data-name="Cover mask">
-      <Cover1 />
-    </div>
-  );
-}
-
-function Heading6() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 5">
-      <div className="[word-break:break-word] flex flex-col font-['DM_Sans:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[#2a3132] text-[36px] text-left tracking-[-0.72px] w-full" style={{ fontVariationSettings: "'opsz' 14" }}>
-        <p className="leading-[46.8px]">Campus Events Coverage</p>
-      </div>
-    </div>
-  );
-}
-
-function ProjectTitle1() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Project title">
-      <Heading6 />
-    </div>
-  );
-}
-
-function Container36() {
-  return (
-    <div className="absolute content-stretch flex flex-col items-start left-0 right-0 top-[-1.3px]" data-name="Container">
-      <div className="[word-break:break-word] flex flex-col font-['DM_Sans:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[#5f6566] text-[16px] text-left tracking-[-0.1px] whitespace-nowrap" style={{ fontVariationSettings: "'opsz' 14" }}>
-        <p className="leading-[20.8px] mb-0">From graduation ceremonies to cultural nights, Shema has</p>
-        <p className="leading-[20.8px] mb-0">been the go-to photographer for key ASYV events — delivering</p>
-        <p className="leading-[20.8px] mb-0">candid moments and formal portraits that families and</p>
-        <p className="leading-[20.8px]">students treasure.</p>
-      </div>
-    </div>
-  );
-}
-
-function ProjectSummary1() {
-  return (
-    <div className="h-[83.19px] overflow-clip relative shrink-0 w-full" data-name="Project summary">
-      <Container36 />
-    </div>
-  );
-}
-
-function ProjectInfo1() {
-  return (
-    <div className="content-stretch flex flex-col gap-[16px] items-center justify-center relative shrink-0 w-full" data-name="Project Info">
-      <ProjectTitle1 />
-      <ProjectSummary1 />
-    </div>
-  );
-}
-
-function Mark1() {
-  return (
-    <div className="bg-[#2a3132] content-stretch flex items-start pb-[4.5px] pt-[3.5px] px-[14px] relative rounded-[20px] shrink-0" data-name="Mark">
-      <div className="[word-break:break-word] flex flex-col font-['DM_Sans:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[#f8f6f3] text-[16px] text-left whitespace-nowrap" style={{ fontVariationSettings: "'opsz' 14" }}>
-        <p className="leading-[24px]">Event Photography</p>
-      </div>
-    </div>
-  );
-}
-
-function Container37() {
-  return (
-    <div className="absolute content-stretch flex flex-col items-start left-0 right-0 top-[-4px]" data-name="Container">
-      <Mark1 />
-    </div>
-  );
-}
-
-function Category1() {
-  return (
-    <div className="h-[24px] relative shrink-0 w-[128.31px]" data-name="Category">
-      <Container37 />
-    </div>
-  );
-}
-
-function MaskGroup1() {
-  return (
-    <div className="relative shrink-0 size-[24px]" data-name="Mask Group">
-      <div className="-translate-x-1/2 -translate-y-1/2 absolute bg-[#f8f6f3] left-1/2 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-[24px_24px] size-[24px] top-1/2" style={{ maskImage: `url('${imgBackground}')` }} data-name="Background" />
-    </div>
-  );
-}
-
-function Icon3() {
-  return (
-    <div className="bg-[#2a3132] content-stretch flex items-center justify-center opacity-0 relative rounded-[99px] shrink-0 size-[40px]" data-name="Icon">
-      <MaskGroup1 />
-    </div>
-  );
-}
-
-function Icon2() {
-  return (
-    <div className="content-stretch flex h-[40px] items-center justify-center pr-[5px] relative shrink-0 w-[45px]" data-name="Icon">
-      <Icon3 />
-    </div>
-  );
-}
-
-function CategoryIcon1() {
-  return (
-    <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-name="Category & Icon">
-      <Category1 />
-      <Icon2 />
-    </div>
-  );
-}
-
-function ContentWrapper1() {
-  return (
-    <div className="content-stretch flex flex-col gap-[40px] items-start relative shrink-0 w-full" data-name="Content → Wrapper">
-      <ProjectInfo1 />
-      <CategoryIcon1 />
-    </div>
-  );
-}
-
-function Desktop1() {
-  return (
-    <div className="bg-white content-stretch flex flex-col gap-[40px] items-start overflow-clip p-[20px] relative rounded-[16px] shrink-0 w-[504px]" data-name="Desktop">
-      <CoverMask1 />
-      <ContentWrapper1 />
-      <div className="absolute inset-0 rounded-[16px]" data-name="Border">
-        <div aria-hidden="true" className="absolute border border-black/[0.08] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      </div>
-    </div>
-  );
-}
-
-function Container35() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="Container">
-      <Desktop1 />
-    </div>
-  );
-}
-
-function Link1() {
-  return (
-    <a className="-translate-x-1/2 absolute content-stretch cursor-pointer flex flex-col items-center justify-end left-[calc(50%+264px)] top-0" href={getImg("project2Link") || "https://artemis1.framer.website/works/launchpad"} target="_blank" data-name="Link">
-      <Container35 />
-    </a>
-  );
-}
-
-function HandHoldingPhoneWithSavingGoalAppInterfaceFinancialPlanningConcept() {
-  return (
-    <div className="flex-[1_0_0] min-h-px relative w-full" data-name="Hand holding phone with saving goal app interface. Financial planning concept.">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <img alt="" className="absolute h-[130.12%] left-0 max-w-none top-[-15.06%] w-full" src={getImg("project3") || imgHandHoldingPhoneWithSavingGoalAppInterfaceFinancialPlanningConcept} />
-      </div>
-    </div>
-  );
-}
-
-function Cover2() {
-  return (
-    <div className="content-stretch flex flex-col h-[283px] items-start justify-center relative shrink-0 w-[491px]" data-name="Cover">
-      <HandHoldingPhoneWithSavingGoalAppInterfaceFinancialPlanningConcept />
-    </div>
-  );
-}
-
-function CoverMask2() {
-  return (
-    <div className="content-stretch flex flex-col items-center justify-center overflow-clip relative rounded-[8px] shrink-0 w-full" data-name="Cover mask">
-      <Cover2 />
-    </div>
-  );
-}
-
-function Heading7() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 5">
-      <div className="[word-break:break-word] flex flex-col font-['DM_Sans:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[#2a3132] text-[36px] text-left tracking-[-0.72px] w-full" style={{ fontVariationSettings: "'opsz' 14" }}>
-        <p className="leading-[46.8px]">Visual Storytelling Reels</p>
-      </div>
-    </div>
-  );
-}
-
-function ProjectTitle2() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Project title">
-      <Heading7 />
-    </div>
-  );
-}
-
-function Container39() {
-  return (
-    <div className="absolute content-stretch flex flex-col items-start left-0 right-0 top-[-1.3px]" data-name="Container">
-      <div className="[word-break:break-word] flex flex-col font-['DM_Sans:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[#5f6566] text-[16px] text-left tracking-[-0.1px] whitespace-nowrap" style={{ fontVariationSettings: "'opsz' 14" }}>
-        <p className="leading-[20.8px] mb-0">Short films and video reels that explore youth, identity, and</p>
-        <p className="leading-[20.8px] mb-0">community in Rwanda. Shot, directed, and edited by Shema —</p>
-        <p className="leading-[20.8px] mb-0">blending cinematic visuals with authentic storytelling that</p>
-        <p className="leading-[20.8px]">captures real moments.</p>
-      </div>
-    </div>
-  );
-}
-
-function ProjectSummary2() {
-  return (
-    <div className="h-[83.19px] overflow-clip relative shrink-0 w-full" data-name="Project summary">
-      <Container39 />
-    </div>
-  );
-}
-
-function ProjectInfo2() {
-  return (
-    <div className="content-stretch flex flex-col gap-[16px] items-center justify-center relative shrink-0 w-full" data-name="Project Info">
-      <ProjectTitle2 />
-      <ProjectSummary2 />
-    </div>
-  );
-}
-
-function Mark2() {
-  return (
-    <div className="bg-[#2a3132] content-stretch flex items-start pb-[4.5px] pt-[3.5px] px-[14px] relative rounded-[20px] shrink-0" data-name="Mark">
-      <div className="[word-break:break-word] flex flex-col font-['DM_Sans:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[#f8f6f3] text-[16px] text-left whitespace-nowrap" style={{ fontVariationSettings: "'opsz' 14" }}>
-        <p className="leading-[24px]">Videography</p>
-      </div>
-    </div>
-  );
-}
-
-function Container40() {
-  return (
-    <div className="absolute content-stretch flex flex-col items-start left-0 right-0 top-[-4px]" data-name="Container">
-      <Mark2 />
-    </div>
-  );
-}
-
-function Category2() {
-  return (
-    <div className="h-[24px] relative shrink-0 w-[83.38px]" data-name="Category">
-      <Container40 />
-    </div>
-  );
-}
-
-function MaskGroup2() {
-  return (
-    <div className="relative shrink-0 size-[24px]" data-name="Mask Group">
-      <div className="-translate-x-1/2 -translate-y-1/2 absolute bg-[#f8f6f3] left-1/2 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-[24px_24px] size-[24px] top-1/2" style={{ maskImage: `url('${imgBackground}')` }} data-name="Background" />
-    </div>
-  );
-}
-
-function Icon5() {
-  return (
-    <div className="bg-[#2a3132] content-stretch flex items-center justify-center opacity-0 relative rounded-[99px] shrink-0 size-[40px]" data-name="Icon">
-      <MaskGroup2 />
-    </div>
-  );
-}
-
-function Icon4() {
-  return (
-    <div className="content-stretch flex h-[40px] items-center justify-center pr-[5px] relative shrink-0 w-[45px]" data-name="Icon">
-      <Icon5 />
-    </div>
-  );
-}
-
-function CategoryIcon2() {
-  return (
-    <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-name="Category & Icon">
-      <Category2 />
-      <Icon4 />
-    </div>
-  );
-}
-
-function ContentWrapper2() {
-  return (
-    <div className="content-stretch flex flex-col gap-[40.01px] items-start relative shrink-0 w-full" data-name="Content → Wrapper">
-      <ProjectInfo2 />
-      <CategoryIcon2 />
-    </div>
-  );
-}
-
-function Desktop2() {
-  return (
-    <div className="bg-white content-stretch flex flex-col gap-[40px] items-start overflow-clip p-[20px] relative rounded-[16px] shrink-0 w-[504px]" data-name="Desktop">
-      <CoverMask2 />
-      <ContentWrapper2 />
-      <div className="absolute inset-0 rounded-[16px]" data-name="Border">
-        <div aria-hidden="true" className="absolute border border-black/[0.08] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      </div>
-    </div>
-  );
-}
-
-function Container38() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="Container">
-      <Desktop2 />
-    </div>
-  );
-}
-
-function Link2() {
-  return (
-    <a className="-translate-x-1/2 absolute content-stretch cursor-pointer flex flex-col items-center justify-end left-[calc(50%-264px)] top-[688.98px]" href={getImg("project3Link") || "https://artemis1.framer.website/works/healthsync"} target="_blank" data-name="Link">
-      <Container38 />
-    </a>
-  );
-}
-
-function AbstractGreenOvalShapesWithABlackLineOnBeigeBackground() {
-  return (
-    <div className="flex-[1_0_0] min-h-px relative w-full" data-name="Abstract green oval shapes with a black line on beige background">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <img alt="" className="absolute h-full left-[-7.64%] max-w-none top-0 w-[115.27%]" src={getImg("project4") || imgAbstractGreenOvalShapesWithABlackLineOnBeigeBackground} />
-      </div>
-    </div>
-  );
-}
-
-function Cover3() {
-  return (
-    <div className="content-stretch flex flex-col h-[283px] items-start justify-center relative shrink-0 w-[491px]" data-name="Cover">
-      <AbstractGreenOvalShapesWithABlackLineOnBeigeBackground />
-    </div>
-  );
-}
-
-function CoverMask3() {
-  return (
-    <div className="content-stretch flex flex-col items-center justify-center overflow-clip relative rounded-[8px] shrink-0 w-full" data-name="Cover mask">
-      <Cover3 />
-    </div>
-  );
-}
-
-function Heading8() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 5">
-      <div className="[word-break:break-word] flex flex-col font-['DM_Sans:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[#2a3132] text-[36px] text-left tracking-[-0.72px] w-full" style={{ fontVariationSettings: "'opsz' 14" }}>
-        <p className="leading-[46.8px]">Portrait Sessions</p>
-      </div>
-    </div>
-  );
-}
-
-function ProjectTitle3() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Project title">
-      <Heading8 />
-    </div>
-  );
-}
-
-function Container42() {
-  return (
-    <div className="absolute content-stretch flex flex-col items-start left-0 right-0 top-[-1.3px]" data-name="Container">
-      <div className="[word-break:break-word] flex flex-col font-['DM_Sans:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[#5f6566] text-[16px] text-left tracking-[-0.1px] whitespace-nowrap" style={{ fontVariationSettings: "'opsz' 14" }}>
-        <p className="leading-[20.8px] mb-0">One-on-one portrait sessions that go beyond the posed shot.</p>
-        <p className="leading-[20.8px] mb-0">Whether it's a student, a teacher, or a community member,</p>
-        <p className="leading-[20.8px] mb-0">every portrait tells a story — honest, personal, and</p>
-        <p className="leading-[20.8px]">made to last.</p>
-      </div>
-    </div>
-  );
-}
-
-function ProjectSummary3() {
-  return (
-    <div className="h-[83.19px] overflow-clip relative shrink-0 w-full" data-name="Project summary">
-      <Container42 />
-    </div>
-  );
-}
-
-function ProjectInfo3() {
-  return (
-    <div className="content-stretch flex flex-col gap-[16px] items-center justify-center relative shrink-0 w-full" data-name="Project Info">
-      <ProjectTitle3 />
-      <ProjectSummary3 />
-    </div>
-  );
-}
-
-function Mark3() {
-  return (
-    <div className="bg-[#2a3132] content-stretch flex items-start pb-[4.5px] pt-[3.5px] px-[14px] relative rounded-[20px] shrink-0" data-name="Mark">
-      <div className="[word-break:break-word] flex flex-col font-['DM_Sans:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[#f8f6f3] text-[16px] text-left whitespace-nowrap" style={{ fontVariationSettings: "'opsz' 14" }}>
-        <p className="leading-[24px]">Portrait Photography</p>
-      </div>
-    </div>
-  );
-}
-
-function Container43() {
-  return (
-    <div className="absolute content-stretch flex flex-col items-start left-0 right-0 top-[-4px]" data-name="Container">
-      <Mark3 />
-    </div>
-  );
-}
-
-function Category3() {
-  return (
-    <div className="h-[24px] relative shrink-0 w-[128.31px]" data-name="Category">
-      <Container43 />
-    </div>
-  );
-}
-
-function MaskGroup3() {
-  return (
-    <div className="relative shrink-0 size-[24px]" data-name="Mask Group">
-      <div className="-translate-x-1/2 -translate-y-1/2 absolute bg-[#f8f6f3] left-1/2 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-[24px_24px] size-[24px] top-1/2" style={{ maskImage: `url('${imgBackground}')` }} data-name="Background" />
-    </div>
-  );
-}
-
-function Icon7() {
-  return (
-    <div className="bg-[#2a3132] content-stretch flex items-center justify-center opacity-0 relative rounded-[99px] shrink-0 size-[40px]" data-name="Icon">
-      <MaskGroup3 />
-    </div>
-  );
-}
-
-function Icon6() {
-  return (
-    <div className="content-stretch flex h-[40px] items-center justify-center pr-[5px] relative shrink-0 w-[45px]" data-name="Icon">
-      <Icon7 />
-    </div>
-  );
-}
-
-function CategoryIcon3() {
-  return (
-    <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-name="Category & Icon">
-      <Category3 />
-      <Icon6 />
-    </div>
-  );
-}
-
-function ContentWrapper3() {
-  return (
-    <div className="content-stretch flex flex-col gap-[40.01px] items-start relative shrink-0 w-full" data-name="Content → Wrapper">
-      <ProjectInfo3 />
-      <CategoryIcon3 />
-    </div>
-  );
-}
-
-function Desktop3() {
-  return (
-    <div className="bg-white content-stretch flex flex-col gap-[40px] items-start overflow-clip p-[20px] relative rounded-[16px] shrink-0 w-[504px]" data-name="Desktop">
-      <CoverMask3 />
-      <ContentWrapper3 />
-      <div className="absolute inset-0 rounded-[16px]" data-name="Border">
-        <div aria-hidden="true" className="absolute border border-black/[0.08] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      </div>
-    </div>
-  );
-}
-
-function Container41() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="Container">
-      <Desktop3 />
-    </div>
-  );
-}
-
-function Link3() {
-  return (
-    <a className="-translate-x-1/2 absolute content-stretch cursor-pointer flex flex-col items-center justify-end left-[calc(50%+264px)] top-[688.98px]" href={getImg("project4Link") || "https://artemis1.framer.website/works/talentbridge"} target="_blank" data-name="Link">
-      <Container41 />
-    </a>
-  );
-}
-
-function Container28() {
-  return (
-    <div className="h-[1425.97px] max-w-[1440px] relative shrink-0 w-[1440px]" data-name="Container">
-      <LoadMore />
-      <Link />
-      <Link1 />
-      <Link2 />
-      <Link3 />
-    </div>
-  );
-}
-
-function SectionDesignInActiion() {
-  return (
-    <div className="-translate-x-1/2 absolute content-stretch flex flex-col gap-[40px] items-center left-1/2 min-w-[1768px] top-[1510.2px]" data-name="Section - Design in actiion">
-      <SectionTitle1 />
-      <Container28 />
     </div>
   );
 }
@@ -1894,20 +840,16 @@ function Content1() {
 
 function Paragraph() {
   return (
-    <div className="[word-break:break-word] font-['DM_Sans:Regular',sans-serif] font-normal h-[52px] leading-[0] relative shrink-0 text-[#5f6566] text-[20px] text-center tracking-[-0.2px] w-full" data-name="Paragraph">
-      <div className="-translate-x-1/2 -translate-y-1/2 absolute flex flex-col justify-center left-[calc(50%+0.07px)] top-[13px] w-[468.195px]" style={{ fontVariationSettings: "'opsz' 14" }}>
-        <p className="leading-[26px]">{`Visual storytelling that captures what words can't — `}</p>
-      </div>
-      <div className="-translate-x-1/2 -translate-y-1/2 absolute flex flex-col justify-center left-[calc(50%-2.55px)] top-[39px] w-[284.123px]" style={{ fontVariationSettings: "'opsz' 14" }}>
-        <p className="leading-[26px]">{`built for events, people, and powerful narratives.`}</p>
-      </div>
+    <div className="text-center font-['DM_Sans:Regular',sans-serif] font-normal text-[#5f6566] text-[20px] tracking-[-0.2px]" style={{ fontVariationSettings: "'opsz' 14" }} data-name="Paragraph">
+      <p className="leading-[32px]">{`Visual storytelling that captures what words can't —`}</p>
+      <p className="leading-[32px]">{`built for events, people, and powerful narratives.`}</p>
     </div>
   );
 }
 
 function Description1() {
   return (
-    <div className="content-stretch flex flex-col items-start max-w-[500px] relative shrink-0 w-[500px]" data-name="Description">
+    <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="Description">
       <Paragraph />
     </div>
   );
@@ -1915,7 +857,7 @@ function Description1() {
 
 function Content() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[16.01px] inset-[27.59%_1px_25.6%_-1px] items-center justify-center overflow-clip" data-name="Content">
+    <div className="content-stretch flex flex-col gap-[16px] items-center justify-center relative z-10" data-name="Content">
       <Content1 />
       <Description1 />
     </div>
@@ -1924,7 +866,7 @@ function Content() {
 
 function SectionAbility() {
   return (
-    <div className="-translate-x-1/2 absolute h-[687px] left-1/2 top-[3254.97px] w-[880px] bg-[#ebe9e4] rounded-[40px] overflow-hidden" data-name="Section - Ability">
+    <div className="-translate-x-1/2 absolute h-[687px] left-1/2 top-[1670px] w-[880px] flex items-center justify-center" data-name="Section - Ability">
       <AbilityTag />
       <Content />
     </div>
@@ -2316,7 +1258,7 @@ function BtcGallery() {
 
 function SectionBehindTheCanvas() {
   return (
-    <div className="-translate-x-1/2 absolute bg-[#2a3132] content-stretch flex flex-col gap-[40px] items-center justify-center left-1/2 min-w-[1768px] px-[40px] py-[80px] rounded-[32px] top-[4101.97px]" data-name="Section - Behind the canvas">
+    <div className="-translate-x-1/2 absolute bg-[#2a3132] content-stretch flex flex-col gap-[40px] items-center justify-center left-1/2 min-w-[1768px] px-[40px] py-[80px] rounded-[32px] top-[2517px]" data-name="Section - Behind the canvas">
       <BgPattern />
       <Content2 />
       <BtcGallery />
@@ -3610,296 +2552,69 @@ function HeadingWrapper() {
   );
 }
 
-function Container107() {
+
+const FAQ_ITEMS = [
+  {
+    question: "What types of photography do you specialize in?",
+    answer: "I specialize in portrait, event, documentary, and short film photography and videography — capturing real moments with intention and depth.",
+  },
+  {
+    question: "Do you handle video editing as well?",
+    answer: "Yes. I handle full post-production including color grading, sound mixing, and motion graphics when the project calls for it.",
+  },
+  {
+    question: "How do I book a session with you?",
+    answer: "Reach out through the contact section below. We'll discuss your vision, timeline, and budget, then find a date that works.",
+  },
+  {
+    question: "Can you shoot events outside of ASYV?",
+    answer: "Absolutely. I'm available for events and projects outside of ASYV. Just get in touch and we'll figure out the details.",
+  },
+  {
+    question: "How long does it take to receive edited photos or videos?",
+    answer: "Photos are typically delivered within 1–2 weeks. Video projects take 2–4 weeks depending on length and complexity.",
+  },
+];
+
+function FaqItem({ question, answer }: { question: string; answer: string }) {
+  const [open, setOpen] = useState(false);
   return (
-    <div className="absolute content-stretch flex flex-col items-start left-0 pb-[0.8px] right-0 top-[-1px]" data-name="Container">
-      <div className="[word-break:break-word] flex flex-col font-['DM_Sans:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[#2a3132] text-[16px] tracking-[-0.1px] whitespace-nowrap" style={{ fontVariationSettings: "'opsz' 14" }}>
-        <p className="leading-[20.8px]">What types of photography do you specialize in?</p>
+    <div className="w-full rounded-[16px] bg-[#ebe9e4] overflow-hidden cursor-pointer" onClick={() => setOpen(!open)}>
+      <div className="flex items-center justify-between px-6 py-5">
+        <span className="font-['DM_Sans:Regular',sans-serif] text-[#2a3132] text-[16px] tracking-[-0.1px] leading-[20.8px]" style={{ fontVariationSettings: "'opsz' 14" }}>
+          {question}
+        </span>
+        <svg
+          className="w-4 h-4 flex-none ml-4 text-[#2a3132] transition-transform duration-200"
+          style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)" }}
+          fill="none"
+          viewBox="0 0 16 16"
+        >
+          <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
       </div>
-    </div>
-  );
-}
-
-function Container106() {
-  return (
-    <div className="flex-[1_0_0] h-[20.8px] max-w-[480px] min-w-px overflow-clip relative" data-name="Container">
-      <Container107 />
-    </div>
-  );
-}
-
-function MaskGroup4() {
-  return (
-    <div className="absolute bottom-[11.59%] right-0 top-[11.49%] w-[16px]" data-name="Mask Group">
-      <div className="absolute aspect-[16/16] bg-[#2a3132] bottom-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-[16px_16px] right-0 top-0" style={{ maskImage: `url('${imgBackground1}')` }} data-name="Background" />
-    </div>
-  );
-}
-
-function Container105() {
-  return (
-    <div className="content-stretch flex items-center relative shrink-0 w-full" data-name="Container">
-      <Container106 />
-      <MaskGroup4 />
-    </div>
-  );
-}
-
-function Background1() {
-  return (
-    <div className="bg-[#ebe9e4] flex-[1_0_0] min-w-px relative rounded-[16px]" data-name="Background">
-      <div className="flex flex-col items-center size-full">
-        <div className="content-stretch flex flex-col items-center px-[24px] py-[20px] relative size-full">
-          <Container105 />
+      {open && (
+        <div className="px-6 pb-5 font-['DM_Sans:Regular',sans-serif] text-[#5f6566] text-[15px] leading-[22px]" style={{ fontVariationSettings: "'opsz' 14" }}>
+          {answer}
         </div>
-      </div>
-    </div>
-  );
-}
-
-function ItemClosed() {
-  return (
-    <div className="content-stretch flex items-center overflow-clip relative shrink-0 w-full" data-name="Item → Closed">
-      <Background1 />
-    </div>
-  );
-}
-
-function Container110() {
-  return (
-    <div className="absolute content-stretch flex flex-col items-start left-0 pb-[0.8px] right-0 top-[-1px]" data-name="Container">
-      <div className="[word-break:break-word] flex flex-col font-['DM_Sans:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[#2a3132] text-[16px] tracking-[-0.1px] whitespace-nowrap" style={{ fontVariationSettings: "'opsz' 14" }}>
-        <p className="leading-[20.8px]">Do you handle video editing as well?</p>
-      </div>
-    </div>
-  );
-}
-
-function Container109() {
-  return (
-    <div className="flex-[1_0_0] h-[20.8px] max-w-[480px] min-w-px overflow-clip relative" data-name="Container">
-      <Container110 />
-    </div>
-  );
-}
-
-function MaskGroup5() {
-  return (
-    <div className="absolute bottom-[11.59%] right-0 top-[11.49%] w-[16px]" data-name="Mask Group">
-      <div className="absolute aspect-[16/16] bg-[#2a3132] bottom-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-[16px_16px] right-0 top-0" style={{ maskImage: `url('${imgBackground1}')` }} data-name="Background" />
-    </div>
-  );
-}
-
-function Container108() {
-  return (
-    <div className="content-stretch flex items-center relative shrink-0 w-full" data-name="Container">
-      <Container109 />
-      <MaskGroup5 />
-    </div>
-  );
-}
-
-function Background2() {
-  return (
-    <div className="bg-[#ebe9e4] flex-[1_0_0] min-w-px relative rounded-[16px]" data-name="Background">
-      <div className="flex flex-col items-center size-full">
-        <div className="content-stretch flex flex-col items-center px-[24px] py-[20px] relative size-full">
-          <Container108 />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function ItemClosed1() {
-  return (
-    <div className="content-stretch flex items-center overflow-clip relative shrink-0 w-full" data-name="Item → Closed">
-      <Background2 />
-    </div>
-  );
-}
-
-function Container113() {
-  return (
-    <div className="absolute content-stretch flex flex-col items-start left-0 pb-[0.8px] right-0 top-[-1px]" data-name="Container">
-      <div className="[word-break:break-word] flex flex-col font-['DM_Sans:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[#2a3132] text-[16px] tracking-[-0.1px] whitespace-nowrap" style={{ fontVariationSettings: "'opsz' 14" }}>
-        <p className="leading-[20.8px]">How do I book a session with you?</p>
-      </div>
-    </div>
-  );
-}
-
-function Container112() {
-  return (
-    <div className="flex-[1_0_0] h-[20.8px] max-w-[480px] min-w-px overflow-clip relative" data-name="Container">
-      <Container113 />
-    </div>
-  );
-}
-
-function MaskGroup6() {
-  return (
-    <div className="absolute bottom-[11.59%] right-0 top-[11.49%] w-[16px]" data-name="Mask Group">
-      <div className="absolute aspect-[16/16] bg-[#2a3132] bottom-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-[16px_16px] right-0 top-0" style={{ maskImage: `url('${imgBackground1}')` }} data-name="Background" />
-    </div>
-  );
-}
-
-function Container111() {
-  return (
-    <div className="content-stretch flex items-center relative shrink-0 w-full" data-name="Container">
-      <Container112 />
-      <MaskGroup6 />
-    </div>
-  );
-}
-
-function Background3() {
-  return (
-    <div className="bg-[#ebe9e4] flex-[1_0_0] min-w-px relative rounded-[16px]" data-name="Background">
-      <div className="flex flex-col items-center size-full">
-        <div className="content-stretch flex flex-col items-center px-[24px] py-[20px] relative size-full">
-          <Container111 />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function ItemClosed2() {
-  return (
-    <div className="content-stretch flex items-center overflow-clip relative shrink-0 w-full" data-name="Item → Closed">
-      <Background3 />
-    </div>
-  );
-}
-
-function Container116() {
-  return (
-    <div className="absolute content-stretch flex flex-col items-start left-0 pb-[0.8px] right-0 top-[-1px]" data-name="Container">
-      <div className="[word-break:break-word] flex flex-col font-['DM_Sans:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[#2a3132] text-[16px] tracking-[-0.1px] whitespace-nowrap" style={{ fontVariationSettings: "'opsz' 14" }}>
-        <p className="leading-[20.8px]">Can you shoot events outside of ASYV?</p>
-      </div>
-    </div>
-  );
-}
-
-function Container115() {
-  return (
-    <div className="flex-[1_0_0] h-[20.8px] max-w-[480px] min-w-px overflow-clip relative" data-name="Container">
-      <Container116 />
-    </div>
-  );
-}
-
-function MaskGroup7() {
-  return (
-    <div className="absolute bottom-[11.59%] right-0 top-[11.49%] w-[16px]" data-name="Mask Group">
-      <div className="absolute aspect-[16/16] bg-[#2a3132] bottom-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-[16px_16px] right-0 top-0" style={{ maskImage: `url('${imgBackground1}')` }} data-name="Background" />
-    </div>
-  );
-}
-
-function Container114() {
-  return (
-    <div className="content-stretch flex items-center relative shrink-0 w-full" data-name="Container">
-      <Container115 />
-      <MaskGroup7 />
-    </div>
-  );
-}
-
-function Background4() {
-  return (
-    <div className="bg-[#ebe9e4] flex-[1_0_0] min-w-px relative rounded-[16px]" data-name="Background">
-      <div className="flex flex-col items-center size-full">
-        <div className="content-stretch flex flex-col items-center px-[24px] py-[20px] relative size-full">
-          <Container114 />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function ItemClosed3() {
-  return (
-    <div className="content-stretch flex items-center overflow-clip relative shrink-0 w-full" data-name="Item → Closed">
-      <Background4 />
-    </div>
-  );
-}
-
-function Container119() {
-  return (
-    <div className="absolute content-stretch flex flex-col items-start left-0 pb-[0.8px] right-0 top-[-1px]" data-name="Container">
-      <div className="[word-break:break-word] flex flex-col font-['DM_Sans:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[#2a3132] text-[16px] tracking-[-0.1px] whitespace-nowrap" style={{ fontVariationSettings: "'opsz' 14" }}>
-        <p className="leading-[20.8px]">How long does it take to receive edited photos or videos?</p>
-      </div>
-    </div>
-  );
-}
-
-function Container118() {
-  return (
-    <div className="flex-[1_0_0] h-[20.8px] max-w-[480px] min-w-px overflow-clip relative" data-name="Container">
-      <Container119 />
-    </div>
-  );
-}
-
-function MaskGroup8() {
-  return (
-    <div className="absolute bottom-[11.54%] right-0 top-[11.54%] w-[16px]" data-name="Mask Group">
-      <div className="absolute aspect-[16/16] bg-[#2a3132] bottom-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-[16px_16px] right-0 top-0" style={{ maskImage: `url('${imgBackground1}')` }} data-name="Background" />
-    </div>
-  );
-}
-
-function Container117() {
-  return (
-    <div className="content-stretch flex items-center relative shrink-0 w-full" data-name="Container">
-      <Container118 />
-      <MaskGroup8 />
-    </div>
-  );
-}
-
-function Background5() {
-  return (
-    <div className="bg-[#ebe9e4] flex-[1_0_0] min-w-px relative rounded-[16px]" data-name="Background">
-      <div className="flex flex-col items-center size-full">
-        <div className="content-stretch flex flex-col items-center px-[24px] py-[20px] relative size-full">
-          <Container117 />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function ItemClosed4() {
-  return (
-    <div className="content-stretch flex items-center overflow-clip relative shrink-0 w-full" data-name="Item → Closed">
-      <Background5 />
+      )}
     </div>
   );
 }
 
 function ContentWrapperFaqListMainFaq() {
   return (
-    <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-[500px]" data-name="Content wrapper → FAQ → List - Main FAQ">
-      <ItemClosed />
-      <ItemClosed1 />
-      <ItemClosed2 />
-      <ItemClosed3 />
-      <ItemClosed4 />
+    <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-[500px]">
+      {FAQ_ITEMS.map((item, i) => (
+        <FaqItem key={i} question={item.question} answer={item.answer} />
+      ))}
     </div>
   );
 }
 
 function FaQs() {
   return (
-    <div className="-translate-x-1/2 absolute content-stretch flex flex-col gap-[40px] items-center left-1/2 max-w-[1200px] min-w-[1200px] top-[5219.55px]" data-name="FAQs">
+    <div className="-translate-x-1/2 absolute content-stretch flex flex-col gap-[40px] items-center left-1/2 max-w-[1200px] min-w-[1200px] top-[3635px]" data-name="FAQs">
       <HeadingWrapper />
       <ContentWrapperFaqListMainFaq />
     </div>
@@ -3978,437 +2693,58 @@ function Heading10() {
   );
 }
 
-function Container123() {
-  return (
-    <div className="-translate-y-1/2 absolute content-stretch flex flex-col items-start left-0 pb-[0.8px] right-0 top-[calc(50%-0.5px)]" data-name="Container">
-      <div className="[word-break:break-word] flex flex-col font-['DM_Sans:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[#2a3132] text-[16px] text-left tracking-[-0.1px] whitespace-nowrap" role="link" style={{ fontVariationSettings: "'opsz' 14" }} tabIndex="0">
-        <p className="cursor-pointer leading-[20.8px]">Email</p>
-      </div>
-    </div>
-  );
-}
 
-function Label() {
-  return (
-    <div className="h-[20.8px] max-w-[250px] relative shrink-0 w-[38.92px]" data-name="Label">
-      <Container123 />
-    </div>
-  );
-}
+const CONTACT_ITEMS = [
+  { label: "Email", value: "shema@email.com", href: "mailto:hello@artemis.com" },
+  { label: "Instagram", value: "@shemaeric", href: "https://instagram.com/shemaeric" },
+  { label: "YouTube", value: "youtube.com/shemaeric", href: "https://youtube.com/shemaeric" },
+  { label: "WhatsApp", value: "+250 XXX XXX XXX", href: "https://wa.me/250XXXXXXXXX" },
 
-function Value() {
-  return (
-    <div className="flex-[1_0_0] h-[20.8px] min-w-px relative" data-name="Value">
-      <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['DM_Sans:Regular',sans-serif] font-normal justify-center leading-[0] right-[-0.86px] text-[#2a3132] text-[16px] text-right top-[9.5px] tracking-[-0.1px] w-[142.107px]" role="link" style={{ fontVariationSettings: "'opsz' 14" }} tabIndex="0">
-        <p className="cursor-pointer leading-[20.8px]">shema@email.com</p>
-      </div>
-    </div>
-  );
-}
+];
 
-function Group1() {
+function ContactFlipItem({ label, value, href }: { label: string; value: string; href: string }) {
+  const [hovered, setHovered] = useState(false);
   return (
-    <div className="relative size-full" data-name="Group">
-      <div className="absolute inset-[-4.64%_-4.64%_-4.65%_-4.64%]">
-        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 15.3 15.3">
-          <g id="Group">
-            <path d="M0.65 7.65L13.375 7.582" id="Vector" stroke="var(--stroke-0, #F8F6F3)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.3" />
-            <path d={svgPaths.p13818a80} id="Vector_2" stroke="var(--stroke-0, #F8F6F3)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.3" />
-          </g>
-        </svg>
-      </div>
-    </div>
-  );
-}
-
-function Svg() {
-  return (
-    <div className="absolute inset-0 overflow-clip" data-name="svg9039102212">
-      <div className="absolute flex inset-[10.78%_-2139.94%_10.02%_260.04%] items-center justify-center" style={{ containerType: "size" }}>
-        <div className="-rotate-45 flex-none h-[hypot(50cqw,50cqh)] w-[hypot(50cqw,-50cqh)]">
-          <Group1 />
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      className="block w-full shrink-0"
+      style={{ perspective: "600px" }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <div
+        className="relative w-full transition-transform duration-500"
+        style={{
+          transformStyle: "preserve-3d",
+          height: "61px",
+          transform: hovered ? "rotateX(180deg)" : "rotateX(0deg)",
+        }}
+      >
+        {/* Front */}
+        <div
+          className="absolute inset-0 bg-[#ebe9e4] rounded-[16px] flex items-center px-6"
+          style={{ backfaceVisibility: "hidden" }}
+        >
+          <span
+            className="font-['DM_Sans:Regular',sans-serif] text-[#2a3132] text-[16px] tracking-[-0.1px] leading-[20.8px]"
+            style={{ fontVariationSettings: "'opsz' 14" }}
+          >
+            {label}
+          </span>
         </div>
-      </div>
-    </div>
-  );
-}
-
-function ArrowUpright() {
-  return (
-    <div className="content-stretch flex flex-col h-[25px] items-start justify-center opacity-0 relative shrink-0 w-px" data-name="arrow-upright">
-      <div className="flex-[1_0_0] min-h-px overflow-clip relative w-full" data-name="Component 1">
-        <Svg />
-      </div>
-    </div>
-  );
-}
-
-function Container124() {
-  return (
-    <div className="content-stretch flex flex-[1_0_0] items-center justify-end min-w-px relative" data-name="Container">
-      <Value />
-      <ArrowUpright />
-    </div>
-  );
-}
-
-function EmialLinkContactItem() {
-  return (
-    <a className="bg-white relative rounded-[16px] shrink-0 w-full" href="mailto:hello@artemis.com" target="_blank" data-name="Emial → Link - Contact Item">
-      <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex gap-[39px] items-center px-[24px] py-[20px] relative size-full">
-          <Label />
-          <Container124 />
-        </div>
-      </div>
-    </a>
-  );
-}
-
-function Container125() {
-  return (
-    <div className="-translate-y-1/2 absolute content-stretch flex flex-col items-start left-0 pb-[0.8px] right-0 top-[calc(50%-0.5px)]" data-name="Container">
-      <div className="[word-break:break-word] flex flex-col font-['DM_Sans:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[#2a3132] text-[16px] text-left tracking-[-0.1px] whitespace-nowrap" role="link" style={{ fontVariationSettings: "'opsz' 14" }} tabIndex="0">
-        <p className="cursor-pointer leading-[20.8px]">Instagram</p>
-      </div>
-    </div>
-  );
-}
-
-function Label1() {
-  return (
-    <div className="h-[20.8px] max-w-[250px] relative shrink-0 w-[60.2px]" data-name="Label">
-      <Container125 />
-    </div>
-  );
-}
-
-function Value1() {
-  return (
-    <div className="flex-[1_0_0] h-[20.8px] min-w-px relative" data-name="Value">
-      <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['DM_Sans:Regular',sans-serif] font-normal justify-center leading-[0] right-[-0.48px] text-[#2a3132] text-[16px] text-right top-[9.5px] tracking-[-0.1px] w-[152.117px]" role="link" style={{ fontVariationSettings: "'opsz' 14" }} tabIndex="0">
-        <p className="cursor-pointer leading-[20.8px]">@shemaeric</p>
-      </div>
-    </div>
-  );
-}
-
-function Group2() {
-  return (
-    <div className="relative size-full" data-name="Group">
-      <div className="absolute inset-[-4.64%_-4.64%_-4.65%_-4.64%]">
-        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 15.3 15.3">
-          <g id="Group">
-            <path d="M0.65 7.65L13.375 7.582" id="Vector" stroke="var(--stroke-0, #F8F6F3)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.3" />
-            <path d={svgPaths.p13818a80} id="Vector_2" stroke="var(--stroke-0, #F8F6F3)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.3" />
-          </g>
-        </svg>
-      </div>
-    </div>
-  );
-}
-
-function Svg1() {
-  return (
-    <div className="absolute inset-0 overflow-clip" data-name="svg9039102212">
-      <div className="absolute flex inset-[10.78%_-2139.94%_10.02%_260.04%] items-center justify-center" style={{ containerType: "size" }}>
-        <div className="-rotate-45 flex-none h-[hypot(50cqw,50cqh)] w-[hypot(50cqw,-50cqh)]">
-          <Group2 />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function ArrowUpright1() {
-  return (
-    <div className="content-stretch flex flex-col h-[25px] items-start justify-center opacity-0 relative shrink-0 w-px" data-name="arrow-upright">
-      <div className="flex-[1_0_0] min-h-px overflow-clip relative w-full" data-name="Component 1">
-        <Svg1 />
-      </div>
-    </div>
-  );
-}
-
-function Container126() {
-  return (
-    <div className="content-stretch flex flex-[1_0_0] items-center justify-end min-w-px relative" data-name="Container">
-      <Value1 />
-      <ArrowUpright1 />
-    </div>
-  );
-}
-
-function LinkedInLinkContactItem() {
-  return (
-    <a className="bg-white relative rounded-[16px] shrink-0 w-full" href="https://linkedin.com/" target="_blank" data-name="LinkedIn → Link - Contact Item">
-      <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex gap-[39px] items-center px-[24px] py-[20px] relative size-full">
-          <Label1 />
-          <Container126 />
-        </div>
-      </div>
-    </a>
-  );
-}
-
-function Container127() {
-  return (
-    <div className="-translate-y-1/2 absolute content-stretch flex flex-col items-start left-0 pb-[0.8px] right-0 top-[calc(50%-0.5px)]" data-name="Container">
-      <div className="[word-break:break-word] flex flex-col font-['DM_Sans:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[#2a3132] text-[0px] text-left tracking-[-0.1px] whitespace-nowrap" role="link" style={{ fontVariationSettings: "'opsz' 14" }} tabIndex="0">
-        <p className="cursor-pointer leading-[20.8px] text-[16px]" style={{ fontVariationSettings: "'opsz' 14" }}>
-          YouTube
-        </p>
-      </div>
-    </div>
-  );
-}
-
-function Label2() {
-  return (
-    <div className="h-[20.8px] max-w-[250px] relative shrink-0 w-[60.09px]" data-name="Label">
-      <Container127 />
-    </div>
-  );
-}
-
-function Value2() {
-  return (
-    <div className="flex-[1_0_0] h-[20.8px] min-w-px relative" data-name="Value">
-      <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['DM_Sans:Regular',sans-serif] font-normal justify-center leading-[0] right-[-0.32px] text-[#2a3132] text-[0px] text-right top-[9.5px] tracking-[-0.1px] w-[171.133px]" role="link" style={{ fontVariationSettings: "'opsz' 14" }} tabIndex="0">
-        <p className="cursor-pointer leading-[20.8px] text-[16px]" style={{ fontVariationSettings: "'opsz' 14" }}>
-          youtube.com/shemaeric
-        </p>
-      </div>
-    </div>
-  );
-}
-
-function Group3() {
-  return (
-    <div className="relative size-full" data-name="Group">
-      <div className="absolute inset-[-4.64%_-4.64%_-4.65%_-4.64%]">
-        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 15.3 15.3">
-          <g id="Group">
-            <path d="M0.65 7.65L13.375 7.582" id="Vector" stroke="var(--stroke-0, #F8F6F3)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.3" />
-            <path d={svgPaths.p13818a80} id="Vector_2" stroke="var(--stroke-0, #F8F6F3)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.3" />
-          </g>
-        </svg>
-      </div>
-    </div>
-  );
-}
-
-function Svg2() {
-  return (
-    <div className="absolute inset-0 overflow-clip" data-name="svg9039102212">
-      <div className="absolute flex inset-[10.78%_-2139.94%_10.02%_260.04%] items-center justify-center" style={{ containerType: "size" }}>
-        <div className="-rotate-45 flex-none h-[hypot(50cqw,50cqh)] w-[hypot(50cqw,-50cqh)]">
-          <Group3 />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function ArrowUpright2() {
-  return (
-    <div className="content-stretch flex flex-col h-[25px] items-start justify-center opacity-0 relative shrink-0 w-px" data-name="arrow-upright">
-      <div className="flex-[1_0_0] min-h-px overflow-clip relative w-full" data-name="Component 1">
-        <Svg2 />
-      </div>
-    </div>
-  );
-}
-
-function Container128() {
-  return (
-    <div className="content-stretch flex flex-[1_0_0] items-center justify-end min-w-px relative" data-name="Container">
-      <Value2 />
-      <ArrowUpright2 />
-    </div>
-  );
-}
-
-function LinkedInLinkContactItem1() {
-  return (
-    <a className="bg-white relative rounded-[16px] shrink-0 w-full" href="https://artemis1.framer.website/" target="_blank" data-name="LinkedIn → Link - Contact Item">
-      <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex gap-[39px] items-center px-[24px] py-[20px] relative size-full">
-          <Label2 />
-          <Container128 />
-        </div>
-      </div>
-    </a>
-  );
-}
-
-function Container129() {
-  return (
-    <div className="-translate-y-1/2 absolute content-stretch flex flex-col items-start left-0 pb-[0.8px] right-0 top-[calc(50%-0.5px)]" data-name="Container">
-      <div className="[word-break:break-word] flex flex-col font-['DM_Sans:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[#2a3132] text-[16px] text-left tracking-[-0.1px] whitespace-nowrap" role="link" style={{ fontVariationSettings: "'opsz' 14" }} tabIndex="0">
-        <p className="cursor-pointer leading-[20.8px]">WhatsApp</p>
-      </div>
-    </div>
-  );
-}
-
-function Label3() {
-  return (
-    <div className="h-[20.8px] max-w-[250px] relative shrink-0 w-[53.42px]" data-name="Label">
-      <Container129 />
-    </div>
-  );
-}
-
-function Value3() {
-  return (
-    <div className="flex-[1_0_0] h-[20.8px] min-w-px relative" data-name="Value">
-      <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['DM_Sans:Regular',sans-serif] font-normal justify-center leading-[0] right-[-0.74px] text-[#2a3132] text-[16px] text-right top-[9.5px] tracking-[-0.1px] w-[105.159px]" role="link" style={{ fontVariationSettings: "'opsz' 14" }} tabIndex="0">
-        <p className="cursor-pointer leading-[20.8px]">+250 XXX XXX XXX</p>
-      </div>
-    </div>
-  );
-}
-
-function Group4() {
-  return (
-    <div className="relative size-full" data-name="Group">
-      <div className="absolute inset-[-4.64%_-4.64%_-4.65%_-4.64%]">
-        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 15.3 15.3">
-          <g id="Group">
-            <path d="M0.65 7.65L13.375 7.582" id="Vector" stroke="var(--stroke-0, #F8F6F3)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.3" />
-            <path d={svgPaths.p13818a80} id="Vector_2" stroke="var(--stroke-0, #F8F6F3)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.3" />
-          </g>
-        </svg>
-      </div>
-    </div>
-  );
-}
-
-function Svg3() {
-  return (
-    <div className="absolute inset-0 overflow-clip" data-name="svg9039102212">
-      <div className="absolute flex inset-[10.78%_-2139.94%_10.02%_260.04%] items-center justify-center" style={{ containerType: "size" }}>
-        <div className="-rotate-45 flex-none h-[hypot(50cqw,50cqh)] w-[hypot(50cqw,-50cqh)]">
-          <Group4 />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function ArrowUpright3() {
-  return (
-    <div className="content-stretch flex flex-col h-[25px] items-start justify-center opacity-0 relative shrink-0 w-px" data-name="arrow-upright">
-      <div className="flex-[1_0_0] min-h-px overflow-clip relative w-full" data-name="Component 1">
-        <Svg3 />
-      </div>
-    </div>
-  );
-}
-
-function Container130() {
-  return (
-    <div className="content-stretch flex flex-[1_0_0] items-center justify-end min-w-px relative" data-name="Container">
-      <Value3 />
-      <ArrowUpright3 />
-    </div>
-  );
-}
-
-function SocialLinkContactItem() {
-  return (
-    <a className="bg-white relative rounded-[16px] shrink-0 w-full" href="https://are.na/" target="_blank" data-name="Social → Link - Contact Item">
-      <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex gap-[39px] items-center px-[24px] py-[20px] relative size-full">
-          <Label3 />
-          <Container130 />
-        </div>
-      </div>
-    </a>
-  );
-}
-
-function Container131() {
-  return (
-    <div className="-translate-y-1/2 absolute content-stretch flex flex-col items-start left-0 pb-[0.8px] right-0 top-[calc(50%-0.5px)]" data-name="Container">
-      <div className="[word-break:break-word] flex flex-col font-['DM_Sans:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[#2a3132] text-[16px] text-left tracking-[-0.1px] whitespace-nowrap" role="link" style={{ fontVariationSettings: "'opsz' 14" }} tabIndex="0">
-        <p className="cursor-pointer leading-[20.8px]">Download Showreel</p>
-      </div>
-    </div>
-  );
-}
-
-function Label4() {
-  return (
-    <div className="h-[20.8px] max-w-[500px] relative shrink-0 w-[173.63px]" data-name="Label">
-      <Container131 />
-    </div>
-  );
-}
-
-function Group5() {
-  return (
-    <div className="relative size-full" data-name="Group">
-      <div className="absolute inset-[-4.64%_-4.64%_-4.65%_-4.64%]">
-        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 15.3 15.3">
-          <g id="Group">
-            <path d="M0.65 7.65L13.375 7.582" id="Vector" stroke="var(--stroke-0, #F8F6F3)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.3" />
-            <path d={svgPaths.p13818a80} id="Vector_2" stroke="var(--stroke-0, #F8F6F3)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.3" />
-          </g>
-        </svg>
-      </div>
-    </div>
-  );
-}
-
-function Svg4() {
-  return (
-    <div className="absolute inset-0 overflow-clip" data-name="svg9039102212">
-      <div className="absolute flex inset-[10.78%_-2139.94%_10.02%_260.04%] items-center justify-center" style={{ containerType: "size" }}>
-        <div className="-rotate-45 flex-none h-[hypot(50cqw,50cqh)] w-[hypot(50cqw,-50cqh)]">
-          <Group5 />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function ArrowUpright4() {
-  return (
-    <div className="content-stretch flex flex-col h-[25px] items-start justify-center opacity-0 relative shrink-0 w-px" data-name="arrow-upright">
-      <div className="flex-[1_0_0] min-h-px overflow-clip relative w-full" data-name="Component 1">
-        <Svg4 />
-      </div>
-    </div>
-  );
-}
-
-function Container132() {
-  return (
-    <div className="content-stretch flex flex-[1_0_0] items-center justify-end min-w-px relative" data-name="Container">
-      <ArrowUpright4 />
-    </div>
-  );
-}
-
-function DownloadCloudMaskGroup() {
-  return (
-    <div className="relative shrink-0 size-[24px]" data-name="download-cloud:mask-group">
-      <div className="-translate-y-1/2 absolute bg-[#5f6566] left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-[24px_24px] size-[24px] top-1/2" style={{ maskImage: `url('${imgDownloadCloud}')` }} data-name="download-cloud" />
-    </div>
-  );
-}
-
-function DownloadLinkDownloadItem() {
-  return (
-    <a className="bg-white relative rounded-[16px] shrink-0 w-full" href="https://framer.link/CwLLucQ" target="_blank" data-name="Download → Link - Download item">
-      <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex gap-[40px] items-center px-[24px] py-[20px] relative size-full">
-          <Label4 />
-          <Container132 />
-          <DownloadCloudMaskGroup />
+        {/* Back */}
+        <div
+          className="absolute inset-0 bg-[#2a3132] rounded-[16px] flex items-center justify-center px-6"
+          style={{ backfaceVisibility: "hidden", transform: "rotateX(180deg)" }}
+        >
+          <span
+            className="font-['DM_Sans:Regular',sans-serif] text-[#f8f6f3] text-[16px] tracking-[-0.1px] leading-[20.8px]"
+            style={{ fontVariationSettings: "'opsz' 14" }}
+          >
+            {value}
+          </span>
         </div>
       </div>
     </a>
@@ -4417,12 +2753,10 @@ function DownloadLinkDownloadItem() {
 
 function ContactDetail() {
   return (
-    <div className="content-stretch cursor-pointer flex flex-col gap-[8px] items-center max-w-[500px] relative shrink-0 w-[500px]" data-name="Contact Detail">
-      <EmialLinkContactItem />
-      <LinkedInLinkContactItem />
-      <LinkedInLinkContactItem1 />
-      <SocialLinkContactItem />
-      <DownloadLinkDownloadItem />
+    <div className="content-stretch flex flex-col gap-[8px] items-center max-w-[500px] relative shrink-0 w-[500px]" data-name="Contact Detail">
+      {CONTACT_ITEMS.map((item, i) => (
+        <ContactFlipItem key={i} label={item.label} value={item.value} href={item.href} />
+      ))}
     </div>
   );
 }
@@ -4442,7 +2776,7 @@ function SectionDesktop() {
 
 function Container120() {
   return (
-    <div className="-translate-x-1/2 absolute content-stretch flex flex-col items-start left-1/2 min-w-[1768px] top-[5974.33px] w-[1768px]" data-name="Container">
+    <div className="-translate-x-1/2 absolute content-stretch flex flex-col items-start left-1/2 min-w-[1768px] top-[4390px] w-[1768px]" data-name="Container">
       <SectionDesktop />
     </div>
   );
@@ -4482,7 +2816,7 @@ function Name4() {
 
 function LinkVariant5() {
   return (
-    <a className="cursor-pointer h-[80px] relative shrink-0 w-full" href="https://artemis1.framer.website/" target="_blank" data-name="Link - Variant 1">
+    <a className="cursor-pointer h-[80px] relative shrink-0 w-full" href="/" data-name="Link - Variant 1">
       <div className="flex flex-col items-center justify-center size-full">
         <div className="content-stretch flex flex-col items-center justify-center pb-[13.6px] pt-[12.59px] px-[24px] relative size-full">
           <Name4 />
@@ -4551,8 +2885,7 @@ function Container139() {
 function Copyright() {
   return (
     <div className="content-stretch flex gap-[4px] items-center justify-center relative shrink-0 w-full" data-name="Copyright">
-      <Container137 />
-      <CurrentYear />
+   
       <Container139 />
     </div>
   );
@@ -4581,7 +2914,7 @@ function FooterVariant() {
 
 function Container133() {
   return (
-    <div className="-translate-x-1/2 absolute content-stretch flex flex-col items-start left-1/2 min-w-[1768px] top-[6826.93px] w-[1768px]" data-name="Container">
+    <div className="-translate-x-1/2 absolute content-stretch flex flex-col items-start left-1/2 min-w-[1768px] top-[5242px] w-[1768px]" data-name="Container">
       <FooterVariant />
     </div>
   );
@@ -4646,7 +2979,7 @@ function LinkVertical() {
 
 function Container141() {
   return (
-    <div className="absolute bottom-[5861.72px] content-stretch flex flex-col items-start right-[20px]" data-name="Container">
+    <div className="absolute bottom-[4277px] content-stretch flex flex-col items-start right-[20px]" data-name="Container">
       <LinkVertical />
     </div>
   );
@@ -4663,11 +2996,10 @@ export default function EndOfBodyStart() {
   }, []);
 
   return (
-    <div ref={rootRef} className="bg-[#f8f6f3] relative w-full" style={{ minHeight: "6940px" }} data-name="End of bodyStart">
+    <div ref={rootRef} className="bg-[#f8f6f3] relative w-full overflow-x-hidden" style={{ minHeight: "5355px" }} data-name="End of bodyStart">
       <Container />
       <SectionHero />
       <SectionSneakPeak />
-      <SectionDesignInActiion />
       <SectionAbility />
       <SectionBehindTheCanvas />
       <FaQs />
